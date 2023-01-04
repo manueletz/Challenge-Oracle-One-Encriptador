@@ -1,9 +1,11 @@
 body{
 /* Encriptador - 1 Desktop */
 
+/*
 position: relative;
 width: 1440px;
 height: 1024px;
+*/
 
 /* Light blue/light-blue-100 */
 background: #F3F5FC;
@@ -23,11 +25,21 @@ top: 40px;
 /*background: #0A3871;*/
 }
 
+/*
+h1{
+    height: 150px;
+    border: 10px solid black;
+    padding: 20px;
+    margin: 40px;
+    text-align: center;
+}
+*/
+
 div{
     top: 40px;
 }
 
-input{
+#texto1{
 position: absolute;
 width: 577px;
 height: 48px;
@@ -44,4 +56,68 @@ line-height: 150%;
 
 /* Dark blue/dark-blue-300 */
 color: #0A3871;
+}
+
+
+form div{
+    margin-top: 380px;
+    margin-left: 240px;
+    display: inline-block;
+}
+
+.button{
+/* Button */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 24px;
+gap: 8px;
+
+width: 328px;
+height: 67px;
+
+/* Dark blue/dark-blue-300 */
+background: #0A3871;
+border-radius: 24px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+text-align: center;
+
+/* White */
+color: #FFFFFF;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+display: inline-block;
+}
+
+.rectangulo {
+border: 10px solid white;
+position: absolute;
+width: 300px;
+height: 500px;
+left: 1000px;
+top: 40px;
+
+
+/* White */
+background: #FFFFFF;
+
+/* shadow */
+box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+border-radius: 32px;
+
+/*
+display: flex;
+align-items: center;
+flex-direction: column;
+*/
 }
