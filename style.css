@@ -65,6 +65,36 @@ form div{
     display: inline-block;
 }
 
+#mensaje1 {
+/*
+width: 205px;
+height: 18px;
+*/
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 150%;
+
+/* identical to box height, or 18px */
+
+/* Gray/gray-400 */
+color: #495057;
+
+opacity: 0.8;
+
+/* Inside auto layout 
+flex: none;
+order: 1;
+flex-grow: 0;
+*/
+position: absolute;
+left: 240px;
+top: 450px;
+line-height: 150%;
+}
+
 .button{
 /* Button */
 
@@ -115,9 +145,51 @@ background: #FFFFFF;
 box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
 border-radius: 32px;
 
-/*
+
 display: flex;
 align-items: center;
 flex-direction: column;
-*/
+
+}
+
+#mensaje2 {
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 120%;
+
+/* or 29px */
+text-align: center;
+
+/* Gray/gray-500 */
+color: #343A40;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+}
+
+#mensaje3 {
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+
+/* or 24px */
+text-align: center;
+
+/* Gray/gray-400 */
+color: #495057;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
 }
