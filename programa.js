@@ -5,10 +5,10 @@ La letra "a" es convertida para "ai"
 La letra "o" es convertida para "ober"
 La letra "u" es convertida para "ufat"
 */
-var letras = ["e","i","a","o","u"];
-var letrasCodificadas=["enter","imes","ai","ober","ufat"];
 
 function encriptarLetra(letra) {
+    var letras = ["e","i","a","o","u"];
+    var letrasCodificadas=["enter","imes","ai","ober","ufat"];
     var letraEncriptada=letra;
     for(var indice=0; indice<letras.length; indice++){
         if (letra==letras[indice]){
@@ -20,7 +20,7 @@ function encriptarLetra(letra) {
 }
 
 function encriptarTexto(texto) {
-    textoEncriptado=""
+    var textoEncriptado="";
     for (var indice=0; indice<texto.length; indice++){
         textoEncriptado+=encriptarLetra(texto[indice]);
     }
@@ -32,7 +32,6 @@ function desencriptarTexto(texto){
     //La letra "a" es convertida para "ai"
     var textoDescriptado=""
     for(var indice=0; indice<texto.length; indice++){
-        
         if (texto.slice(indice,indice+2)=="ai"){
             textoDescriptado+="a";
             if (indice+1<texto.length){
@@ -43,7 +42,6 @@ function desencriptarTexto(texto){
         }else{
             textoDescriptado+=texto[indice]
         }
-
     }
 
     texto=textoDescriptado
@@ -82,8 +80,8 @@ function desencriptarTexto(texto){
     //Buscar texto de cinco letras
     //La letra "e" es convertida para "enter" 
     for(var indice=0; indice<texto.length; indice++){
-       
-        if (texto.slice(indice,indice+5)=="enter"){
+
+         if (texto.slice(indice,indice+5)=="enter"){
             textoDescriptado+="e";
             if (indice+4<texto.length){
                 indice+=4;
@@ -94,49 +92,60 @@ function desencriptarTexto(texto){
         }else{
             textoDescriptado+=texto[indice]
         }
+
     }
 
     return textoDescriptado
 }
 
+var texto1 = document.getElementById("texto1");
+var elementosinicio = document.getElementById("elementosinicio");
+var buttonencriptar = document.getElementById("buttonencriptar");
+var buttondesencriptar = document.getElementById("buttondesencriptar");
+var resultado = document.getElementById("resultado");
+var buttoncopiar = document.getElementById("buttoncopiar");
 
+function encriptarTextoRemitido() {
+    var textoFinalEncriptado= encriptarTexto(texto1.value);
+    elementosinicio.style.display='none';
+    resultado.style.display='block';
+    resultado.style.color= '#495057';
+    resultado.innerHTML = textoFinalEncriptado;
+    resultado.style.display='block';
+    buttoncopiar.style.display='block';
+    texto1.value="";
+}
+
+function desencriptarTextoRemitido() {
+    var textoFinalDescriptado= desencriptarTexto(texto1.value);
+    elementosinicio.style.display='none';
+    resultado.style.display='block';
+    resultado.style.color= '#495057';
+    resultado.innerHTML = textoFinalDescriptado;
+    resultado.style.display='block';
+    buttoncopiar.style.display='block';
+    texto1.value="";
+}
+
+function copiar_texto(){
+    resultado.select();
+    //document.textarearesultado.select();
+    document.execCommand("copy");
+}
+
+buttonencriptar.onclick = encriptarTextoRemitido;
+buttondesencriptar.onclick = desencriptarTextoRemitido;
+buttoncopiar.onclick = copiar_texto;
+
+/*
+//PALABRAS DE PRUEBAS PARA VERFICIAR FUNCIONAMIENTO DE ENCRIPTADO Y DESENCRIPTADO
 //textoParaEncriptar="gato";
 textoParaEncriptar="eucalipto";
 //textoParaEncriptar="albericoque";
 
-textoEncriptado="";
-console.log("Texto Original: "+ textoParaEncriptar)
-/*
-for(var indice=0; indice<textoParaEncriptar.length; indice++){
-    textoEncriptado+= encriptarLetra(textoParaEncriptar[indice]);
-}
+console.log("Texto Original: "+ textoParaEncriptar);
+textoEncriptado=encriptarTexto(textoParaEncriptar);
+
+console.log("Texto Encriptado: "+ textoEncriptado);
+console.log("Texto Desencriptado: "+ desencriptarTexto(textoEncriptado))
 */
-//textoEncriptado=encriptarTexto(textoParaEncriptar);
-
-
-var texto1 = document.getElementById("texto1");
-var elementosinicio = document.getElementById("elementosinicio");
-var resultado = document.getElementById("resultado");
-
-function EncriptarTexto1() {
-    textoGlobal= encriptarTexto(texto1.value);
-    //textoGlobal="Modificado";
-    console.log(textoGlobal);
-    elementosinicio.style.display='none';
-    resultado.style.display='block';
-    resultado.style.color= '#495057';
-    resultado.innerHTML = textoGlobal;
-    //return textoGlobal;
-}
-
-
-
-//mitexto = texto1.value;
-//console.log(mitexto);
-//buttonencriptar.onclick = console.log(encriptarTexto(texto1.value));
-var buttonencriptar = document.getElementById("buttonencriptar");
-var buttondesencriptar = document.getElementById("buttondesencriptar");
-buttonencriptar.onclick = EncriptarTexto1;
-
-//console.log("Texto Encriptado: "+ textoEncriptado);
-//console.log("Texto Desencriptado: "+ desencriptarTexto(textoEncriptado))
