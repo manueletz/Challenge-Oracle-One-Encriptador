@@ -59,7 +59,7 @@ color: #0A3871;
 }
 
 
-form div{
+.divbutton{
     margin-top: 380px;
     margin-left: 240px;
     display: inline-block;
@@ -152,6 +152,20 @@ flex-direction: column;
 
 }
 
+#resultado{
+    
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 150%;
+
+/* or 36px */
+
+/* Gray/gray-400 */
+color: #495057;
+}
+
 #mensaje2 {
     font-family: 'Inter';
 font-style: normal;
@@ -192,4 +206,29 @@ flex: none;
 order: 1;
 align-self: stretch;
 flex-grow: 0;
+}
+
+#buttoncopiar{
+    /*display: none;*/
+    bottom: 0;
+    max-width: 200px;
+    
+    margin-top: 50px;
+    width: 328px;
+    height: 67px;
+    
+    top: 40px;
+
+    padding: 24px;
+    gap: 8px;
+
+    vertical-align: bottom;
+    
+
+    /* White */
+    background: #FFFFFF;
+
+    /* shadow */
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    border-radius: 32px;
 }

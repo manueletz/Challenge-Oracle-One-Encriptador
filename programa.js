@@ -5,7 +5,6 @@ La letra "a" es convertida para "ai"
 La letra "o" es convertida para "ober"
 La letra "u" es convertida para "ufat"
 */
-
 var letras = ["e","i","a","o","u"];
 var letrasCodificadas=["enter","imes","ai","ober","ufat"];
 
@@ -18,6 +17,14 @@ function encriptarLetra(letra) {
         }
     }
     return letraEncriptada;
+}
+
+function encriptarTexto(texto) {
+    textoEncriptado=""
+    for (var indice=0; indice<texto.length; indice++){
+        textoEncriptado+=encriptarLetra(texto[indice]);
+    }
+    return textoEncriptado;
 }
 
 function desencriptarTexto(texto){
@@ -99,9 +106,37 @@ textoParaEncriptar="eucalipto";
 
 textoEncriptado="";
 console.log("Texto Original: "+ textoParaEncriptar)
+/*
 for(var indice=0; indice<textoParaEncriptar.length; indice++){
     textoEncriptado+= encriptarLetra(textoParaEncriptar[indice]);
 }
+*/
+//textoEncriptado=encriptarTexto(textoParaEncriptar);
 
-console.log("Texto Encriptado: "+ textoEncriptado);
-console.log("Texto Desencriptado: "+ desencriptarTexto(textoEncriptado))
+
+var texto1 = document.getElementById("texto1");
+var elementosinicio = document.getElementById("elementosinicio");
+var resultado = document.getElementById("resultado");
+
+function EncriptarTexto1() {
+    textoGlobal= encriptarTexto(texto1.value);
+    //textoGlobal="Modificado";
+    console.log(textoGlobal);
+    elementosinicio.style.display='none';
+    resultado.style.display='block';
+    resultado.style.color= '#495057';
+    resultado.innerHTML = textoGlobal;
+    //return textoGlobal;
+}
+
+
+
+//mitexto = texto1.value;
+//console.log(mitexto);
+//buttonencriptar.onclick = console.log(encriptarTexto(texto1.value));
+var buttonencriptar = document.getElementById("buttonencriptar");
+var buttondesencriptar = document.getElementById("buttondesencriptar");
+buttonencriptar.onclick = EncriptarTexto1;
+
+//console.log("Texto Encriptado: "+ textoEncriptado);
+//console.log("Texto Desencriptado: "+ desencriptarTexto(textoEncriptado))

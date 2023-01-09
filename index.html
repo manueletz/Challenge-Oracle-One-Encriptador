@@ -20,17 +20,32 @@
         
         
         <div>
+            <!--
             <form>
                 <input type="text" id="texto1" placeholder="Ingrese el texto aqui">
                 <p id="mensaje1"> Solo letras minúsculas y sin acentos</p>
                 <div>
-                    <button type="submit" class="button" value="Encriptar">Encriptar</button>
-                    <button type="submit" class="button" value="Desencriptar">Desencriptar</button>
+                    <button type="submit" class="button" id="buttonencriptar">Encriptar</button>
+                    <button type="submit" class="button" id="buttondesencriptar">Desencriptar</button>
                 </div>
             </form>
+            -->
+            <!--<input type="text" id="texto1" placeholder="Ingrese el texto aqui">-->
+            <form>
+                <textarea name="plain-text" id="texto1" cols="90" rows="20" placeholder="Ingrese el texto aqui"></textarea>
+            </form>
+            <p id="mensaje1"> Solo letras minúsculas y sin acentos</p>
+            <div class="divbutton">
+                <button class="button" id="buttonencriptar">Encriptar</button>
+                <button class="button" id="buttondesencriptar">Desencriptar</button>
+            </div>
+            
         </div>
 
-        <div class="rectangulo">
+        <div class="rectangulo" >
+            <p id="resultado"style="color: #495057;"></p>
+            <div id="elementosinicio">
+            
             <img src="imagenes/Muñeco.svg">
 
             <p id="mensaje2">Ningún mensaje fue encontrado</p>
@@ -38,6 +53,8 @@
             
             <p id="mensaje3">Ingresa el texto que desees encriptar o desencriptar</p>
             <!--<p>Ingresa el texto que desees encriptar o desencriptar</p>-->
+            </div>
+            <button id="buttoncopiar">copiar</button>
         </div>
     <script src="programa.js"></script>
     </body>
