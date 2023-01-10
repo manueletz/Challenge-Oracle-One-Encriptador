@@ -55,6 +55,22 @@ line-height: 150%;
 /* identical to box height, or 48px */
 /* Dark blue/dark-blue-300 */
 color: #0A3871;
+
+/* AUTOSIZE EN TEXTAREA */
+resize: none;
+max-height: 276px;
+}
+
+/* AUTOSIZE EN TEXTAREA */
+texto1:is(:focus, :valid){
+    border-width: 2px;
+    padding: 14px;
+    border-color: #4671EA;
+}
+
+/* AUTOSIZE EN TEXTAREA */
+texto1::-webkit-scrollbar{
+    width: 0px;
 }
 
 .divbutton{
@@ -122,6 +138,15 @@ order: 0;
 flex-grow: 0;
 display: inline-block;
 }
+
+
+button:hover {
+background: #072B61;
+transform: scale(1.02);
+    /*transform: rotate(70deg);*/
+    
+}
+
 
 .rectangulo {
 border: 10px solid white;
@@ -220,4 +245,21 @@ background: #FFFFFF;
 /* shadow */
 box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
 border-radius: 32px;
+}
+
+@media screen and (max-width:480px){
+    
+    #texto1, #mensaje1 {
+        left: 20px;
+    }
+    #texto1{
+        width: 380px;
+    }
+    .divbutton {
+        margin-left:20px
+    }
+    .rectangulo{
+       left: 20px;
+       top: 620px
+   }
 }

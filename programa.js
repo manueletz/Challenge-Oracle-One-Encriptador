@@ -112,7 +112,12 @@ function encriptarTextoRemitido() {
     resultado.style.color= '#495057';
     resultado.innerHTML = textoFinalEncriptado;
     resultado.style.display='block';
-    buttoncopiar.style.display='block';
+    if (textoFinalEncriptado==""){
+        buttoncopiar.style.display='none';
+    }else{
+        buttoncopiar.style.display='block';
+    }
+
     texto1.value="";
 }
 
@@ -124,6 +129,11 @@ function desencriptarTextoRemitido() {
     resultado.innerHTML = textoFinalDescriptado;
     resultado.style.display='block';
     buttoncopiar.style.display='block';
+    if (textoFinalDescriptado==""){
+        buttoncopiar.style.display='none';
+    }else{
+        buttoncopiar.style.display='block';
+    }
     texto1.value="";
 }
 
@@ -136,6 +146,13 @@ function copiar_texto(){
 buttonencriptar.onclick = encriptarTextoRemitido;
 buttondesencriptar.onclick = desencriptarTextoRemitido;
 buttoncopiar.onclick = copiar_texto;
+
+texto1.addEventListener("keyup", e =>{
+    texto1.style.height = "48px";
+    let scHeight = e.target.scrollHeight;
+    console.log(scHeight);
+    texto1.style.height = `${scHeight}px`;
+});
 
 /*
 //PALABRAS DE PRUEBAS PARA VERFICIAR FUNCIONAMIENTO DE ENCRIPTADO Y DESENCRIPTADO
