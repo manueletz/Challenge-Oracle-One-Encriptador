@@ -112,6 +112,7 @@ function encriptarTextoRemitido() {
     resultado.style.color= '#495057';
     resultado.innerHTML = textoFinalEncriptado;
     resultado.style.display='block';
+    resultado.style.resize='none';
     if (textoFinalEncriptado==""){
         buttoncopiar.style.display='none';
     }else{
@@ -128,6 +129,7 @@ function desencriptarTextoRemitido() {
     resultado.style.color= '#495057';
     resultado.innerHTML = textoFinalDescriptado;
     resultado.style.display='block';
+    resultado.style.resize='none';
     buttoncopiar.style.display='block';
     if (textoFinalDescriptado==""){
         buttoncopiar.style.display='none';
