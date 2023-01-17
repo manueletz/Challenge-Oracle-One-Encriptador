@@ -141,8 +141,8 @@ function desencriptarTextoRemitido() {
 
 function copiar_texto(){
     resultado.select();
-    //document.textarearesultado.select();
-    document.execCommand("copy");
+    resultado.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(resultado.value);
 }
 
 buttonencriptar.onclick = encriptarTextoRemitido;
