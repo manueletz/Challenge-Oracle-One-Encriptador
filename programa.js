@@ -106,6 +106,11 @@ var resultado = document.getElementById("resultado");
 var buttoncopiar = document.getElementById("buttoncopiar");
 
 function encriptarTextoRemitido() {
+    resultado.innerHTML = "";
+    if (validarTextoPermitido(texto1.value)==false){
+        alert("Favor verificar el texto, existen caracteres no permitidos");
+        return;
+    }
     var textoFinalEncriptado= encriptarTexto(texto1.value);
     elementosinicio.style.display='none';
     resultado.style.display='block';
@@ -155,6 +160,19 @@ texto1.addEventListener("keyup", e =>{
     console.log(scHeight);
     texto1.style.height = `${scHeight}px`;
 });
+
+
+
+function validarTextoPermitido(textoEvaluado){
+    const regex = /[A-Z0-9áéíóú\W]/ 
+    var textoPermitido = true;
+    if (regex.test(textoEvaluado)){
+        //alert("Favor verificar el texto, existen caracteres no permitidos")
+        textoPermitido = false;
+    }
+    return textoPermitido;
+}
+
 
 /*
 //PALABRAS DE PRUEBAS PARA VERFICIAR FUNCIONAMIENTO DE ENCRIPTADO Y DESENCRIPTADO
