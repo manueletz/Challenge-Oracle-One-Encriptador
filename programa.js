@@ -1,4 +1,5 @@
 /*
+Encriptador de Texto.
 La letra "e" es convertida para "enter"
 La letra "i" es convertida para "imes"
 La letra "a" es convertida para "ai"
@@ -28,7 +29,7 @@ function encriptarTexto(texto) {
 }
 
 function desencriptarTexto(texto){
-    //Buscar texto de dos letras ai
+    //Buscar texto de 2 letras ai
     //La letra "a" es convertida para "ai"
     var textoDescriptado=""
     for(var indice=0; indice<texto.length; indice++){
@@ -47,7 +48,7 @@ function desencriptarTexto(texto){
     texto=textoDescriptado
     textoDescriptado=""
 
-    //Buscar texto de cuatro letras 
+    //Buscar texto de 4 letras 
     //La letra "i" es convertida para "imes"
     //La letra "o" es convertida para "ober"
     //La letra "u" es convertida para "ufat"
@@ -77,7 +78,7 @@ function desencriptarTexto(texto){
     texto=textoDescriptado
     textoDescriptado=""
 
-    //Buscar texto de cinco letras
+    //Buscar texto de 5 letras
     //La letra "e" es convertida para "enter" 
     for(var indice=0; indice<texto.length; indice++){
 
@@ -107,11 +108,11 @@ var buttoncopiar = document.getElementById("buttoncopiar");
 
 function encriptarTextoRemitido() {
     resultado.innerHTML = "";
-    if (validarTextoPermitido(texto1.value)==false){
+    if (validarTextoPermitido(texto1.value.toLowerCase())==false){
         alert("Favor verificar el texto ingresado, existen caracteres no permitidos");
         return;
     }
-    var textoFinalEncriptado= encriptarTexto(texto1.value);
+    var textoFinalEncriptado= encriptarTexto(texto1.value.toLowerCase());
     elementosinicio.style.display='none';
     resultado.style.display='block';
     resultado.style.color= '#495057';
@@ -123,12 +124,11 @@ function encriptarTextoRemitido() {
     }else{
         buttoncopiar.style.display='block';
     }
-
     texto1.value="";
 }
 
 function desencriptarTextoRemitido() {
-    var textoFinalDescriptado= desencriptarTexto(texto1.value);
+    var textoFinalDescriptado= desencriptarTexto(texto1.value.toLowerCase());
     elementosinicio.style.display='none';
     resultado.style.display='block';
     resultado.style.color= '#495057';
@@ -160,24 +160,11 @@ texto1.addEventListener("keyup", e =>{
     texto1.style.height = `${scHeight}px`;
 });
 
-
-
 function validarTextoPermitido(textoEvaluado){
-    /*
-    //const regex = /[A-Z0-9áéíóú\W\s]/
-    //const regex = /[abcdefghijklmnñopqrstuvwxyz]/
-    const regex = /[a-z]/
-    var textoPermitido = false;
-    if (regex.test(textoEvaluado)){
-        //alert("Favor verificar el texto, existen caracteres no permitidos")
-        textoPermitido = true;
-    }
-    */
-    const textoValido="abcdefghijklmnñopqrstuvwxyz \n";
-    //const textoValido=["a","b","c","ch","d","e","f","g","h","i","j","k","l","m","n","ñ","o","p","q","r","s","t","u","v","w","x","y","z","\n"]
+    const textoValido="abcdefghijklmnñopqrstuüvwxyz \n";
+    
     var textoPermitido = true;
     for (var indice=0; indice<textoEvaluado.length; indice++) {
-        console.log(textoEvaluado[indice]);
         if (!textoValido.includes(textoEvaluado[indice])){
             textoPermitido = false;
             return textoPermitido;
@@ -185,17 +172,3 @@ function validarTextoPermitido(textoEvaluado){
     }
     return textoPermitido;
 }
-
-
-/*
-//PALABRAS DE PRUEBAS PARA VERFICIAR FUNCIONAMIENTO DE ENCRIPTADO Y DESENCRIPTADO
-//textoParaEncriptar="gato";
-textoParaEncriptar="eucalipto";
-//textoParaEncriptar="albericoque";
-
-console.log("Texto Original: "+ textoParaEncriptar);
-textoEncriptado=encriptarTexto(textoParaEncriptar);
-
-console.log("Texto Encriptado: "+ textoEncriptado);
-console.log("Texto Desencriptado: "+ desencriptarTexto(textoEncriptado))
-*/

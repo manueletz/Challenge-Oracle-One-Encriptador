@@ -188,3 +188,22 @@ button:hover {
         margin-top: 25px;
    }
 }
+
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+
+    #texto1, #mensaje1 {
+        left: 105px;
+    }
+    #texto1{
+        width: 480px;
+    }
+    .divbutton {
+        margin-left: 105px;
+    }
+    .rectangulo{
+        left: 105px;
+        top: 620px;
+        margin-top: 25px;
+        
+   }
+}
