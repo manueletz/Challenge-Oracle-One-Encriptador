@@ -81,7 +81,6 @@ function desencriptarTexto(texto){
     //Buscar texto de 5 letras
     //La letra "e" es convertida para "enter" 
     for(var indice=0; indice<texto.length; indice++){
-
          if (texto.slice(indice,indice+5)=="enter"){
             textoDescriptado+="e";
             if (indice+4<texto.length){
