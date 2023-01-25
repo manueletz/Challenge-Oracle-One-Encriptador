@@ -1,4 +1,4 @@
-**Challenge Oracle One - Encriptador.**
+**Challenge Oracle One - Encriptador**
 
 Este es el repositorio del resultado final de la resolución del desafío del Challenge de crear un encriptador con html, css y javascript 
 
