@@ -108,7 +108,7 @@ var buttoncopiar = document.getElementById("buttoncopiar");
 function encriptarTextoRemitido() {
     resultado.innerHTML = "";
     if (validarTextoPermitido(texto1.value)==false){
-        alert("Favor verificar el texto, existen caracteres no permitidos");
+        alert("Favor verificar el texto ingresado, existen caracteres no permitidos");
         return;
     }
     var textoFinalEncriptado= encriptarTexto(texto1.value);
@@ -157,18 +157,31 @@ buttoncopiar.onclick = copiar_texto;
 texto1.addEventListener("keyup", e =>{
     texto1.style.height = "48px";
     let scHeight = e.target.scrollHeight;
-    console.log(scHeight);
     texto1.style.height = `${scHeight}px`;
 });
 
 
 
 function validarTextoPermitido(textoEvaluado){
-    const regex = /[A-Z0-9áéíóú\W]/ 
-    var textoPermitido = true;
+    /*
+    //const regex = /[A-Z0-9áéíóú\W\s]/
+    //const regex = /[abcdefghijklmnñopqrstuvwxyz]/
+    const regex = /[a-z]/
+    var textoPermitido = false;
     if (regex.test(textoEvaluado)){
         //alert("Favor verificar el texto, existen caracteres no permitidos")
-        textoPermitido = false;
+        textoPermitido = true;
+    }
+    */
+    const textoValido="abcdefghijklmnñopqrstuvwxyz \n";
+    //const textoValido=["a","b","c","ch","d","e","f","g","h","i","j","k","l","m","n","ñ","o","p","q","r","s","t","u","v","w","x","y","z","\n"]
+    var textoPermitido = true;
+    for (var indice=0; indice<textoEvaluado.length; indice++) {
+        console.log(textoEvaluado[indice]);
+        if (!textoValido.includes(textoEvaluado[indice])){
+            textoPermitido = false;
+            return textoPermitido;
+        }
     }
     return textoPermitido;
 }
