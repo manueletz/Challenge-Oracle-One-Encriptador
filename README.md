@@ -1,4 +1,4 @@
-**Challenge Oracle One - Encriptador**
+<h2>Challenge Oracle One - Encriptador</h2>
 
 Este es el repositorio del resultado final de la resolución del desafío del Challenge de crear un encriptador con html, css y javascript 
 
@@ -8,11 +8,11 @@ Trabajar en una aplicación que encripta textos, para poder intercambiar mensaje
 
 Las "llaves" de encriptación son las siguientes:
 
-La letra "e" es convertida para "enter"
-La letra "i" es convertida para "imes"
-La letra "a" es convertida para "ai"
-La letra "o" es convertida para "ober"
-La letra "u" es convertida para "ufat"
+- La letra "e" es convertida para "enter"
+- La letra "i" es convertida para "imes"
+- La letra "a" es convertida para "ai"
+- La letra "o" es convertida para "ober"
+- La letra "u" es convertida para "ufat"
 
 **Requisitos**
 - Debe funcionar solo con letras minúsculas
